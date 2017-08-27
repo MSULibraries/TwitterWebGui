@@ -1,0 +1,8 @@
+.topNav ul li:nth-child(1) {
+  border-left: 1px solid black;
+}
+.topNav ul li {
+  display: inline;
+  padding: 5px;
+  border-right: 1px solid black;
+}
