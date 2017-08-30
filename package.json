@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "bootstrap": "3",
+    "concurrently": "^3.5.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
     "husky": "^0.14.3",
     "lint-staged": "^4.0.4",
     "prettier": "^1.5.3",
@@ -11,14 +14,16 @@
     "react-bootstrap": "^0.31.2",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.11"
+    "react-scripts": "1.0.11",
+    "twitter": "^1.7.1"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": ["prettier --write", "git add"]
   },
   "scripts": {
     "precommit": "lint-staged",
-    "start": "react-scripts start",
+    "start": "npm run start:api && react-scripts start",
+    "start:api": "node src/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
