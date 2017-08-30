@@ -1,26 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Navbar, NavItem, Nav } from "react-bootstrap";
 
-import "./styles.css";
+import { Link } from "react-router-dom";
 
 const TopNav = () => {
   return (
-    <nav className="topNav">
-      <ul>
-        <li>
+    <Navbar>
+      <Navbar.Header>
+        <Navbar.Brand>
           <Link to="/">Home</Link>
-        </li>
-        <li>
+        </Navbar.Brand>
+      </Navbar.Header>
+
+      <Nav>
+        <NavItem eventKey={1}>
           <Link to="/about">About</Link>
-        </li>
-        <li>
+        </NavItem>
+
+        <NavItem eventKey={2}>
           <Link to="/tweets">Tweets</Link>
-        </li>
-        <li>
+        </NavItem>
+        <NavItem eventKey={3}>
           <Link to="/hashtags">Hash Tags</Link>
-        </li>
-      </ul>
-    </nav>
+        </NavItem>
+      </Nav>
+    </Navbar>
   );
 };
 
